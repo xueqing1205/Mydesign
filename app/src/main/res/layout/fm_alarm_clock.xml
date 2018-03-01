@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="430dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:scrollbars="none">
+        </android.support.v7.widget.RecyclerView>
+        <!--android:cacheColorHint：自定义listview的时候，当不使用android:cacheColorHint=“#00000000”
+        会出现选中一个空间黑色底色的情况，破坏整体美观度：当你不使用android:listSelector属性，
+        默认会显示选中的item为橙黄底色，有时候我们需要去掉这种效果：-->
+        <LinearLayout
+            android:id="@+id/alarm_clock_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/press_right_top"
+                android:textColor="@color/white_trans90"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_new"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="@string/add_alarm_clock"
+                android:textColor="@color/white_trans90"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:orientation="horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/action_new"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:text="新增"
+            android:drawableTop="@drawable/ic_action_new" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/action_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:textSize="15sp"
+                android:textColor="@android:color/white"
+                android:text="删除"
+                android:drawableTop="@drawable/ic_action_edit" />
+
+            <TextView
+                android:id="@+id/action_accept"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:textSize="15sp"
+                android:textColor="@android:color/white"
+                android:text="完成"
+                android:drawableTop="@drawable/ic_action_accept"
+                android:visibility="gone"/>
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

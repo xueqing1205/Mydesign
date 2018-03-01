@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/layout_loading"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <ViewStub
+                android:id="@+id/viewstub_stop_watch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout="@layout/viewstub_stop_watch"/>
+        </ScrollView>
+    </FrameLayout>
+</LinearLayout>
