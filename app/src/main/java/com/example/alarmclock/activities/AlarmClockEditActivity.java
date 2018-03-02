@@ -4,6 +4,7 @@ package com.example.alarmclock.activities;
 import android.support.v4.app.Fragment;
 
 import com.example.alarmclock.fragment.AlarmClockEditFragment;
+import com.strangeman.alarmclock.R;
 
 
 /**

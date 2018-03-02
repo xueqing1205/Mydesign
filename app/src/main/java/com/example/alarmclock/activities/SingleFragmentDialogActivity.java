@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 import com.example.alarmclock.util.ActivityCollector;
+import com.strangeman.alarmclock.R;
 
 
 /**

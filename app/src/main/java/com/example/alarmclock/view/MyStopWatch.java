@@ -13,9 +13,10 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.example.alarmclock.common.AlarmClockCommon;
+import com.example.alarmclock.util.MyUtil;
 import com.strangeman.alarmclock.R;
-import com.strangeman.alarmclock.common.AlarmClockCommon;
-import com.strangeman.alarmclock.util.MyUtil;
+
 
 import java.util.Calendar;
 import java.util.TimeZone;

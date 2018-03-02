@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.example.alarmclock.adapter.ThemeAdapter;
 import com.example.alarmclock.bean.event.WallpaperEvent;
 import com.example.alarmclock.bean.model.Theme;
 import com.example.alarmclock.common.AlarmClockCommon;

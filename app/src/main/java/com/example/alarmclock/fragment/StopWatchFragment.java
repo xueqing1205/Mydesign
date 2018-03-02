@@ -14,6 +14,7 @@ import android.view.ViewStub;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.alarmclock.adapter.TimeAdapter;
 import com.example.alarmclock.bean.model.WatchTime;
 import com.example.alarmclock.listener.OnVisibleListener;
 import com.example.alarmclock.service.CountDownService;
