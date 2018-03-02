@@ -25,7 +25,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name">
         <activity
-            android:name=".activities.MainActivity"
+            android:name="com.example.alarmclock.activities.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -36,38 +36,38 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.ThemeActivity"
+            android:name="com.example.alarmclock.activities.ThemeActivity"
             android:launchMode="singleTop"
             android:theme="@style/Transparent.Light"/>
         <activity
-            android:name=".activities.AlarmClockNewActivity"
+            android:name="com.example.alarmclock.activities.AlarmClockNewActivity"
             android:launchMode="singleTop"
             android:theme="@style/Transparent.Light"/>
         <activity
-            android:name=".activities.AlarmClockEditActivity"
+            android:name="com.example.alarmclock.activities.AlarmClockEditActivity"
             android:launchMode="singleTop"
             android:theme="@style/Transparent.Light"/>
         <activity
-            android:name=".activities.RingSelectActivity"
+            android:name="com.example.alarmclock.activities.RingSelectActivity"
             android:launchMode="singleTop"
             android:theme="@style/Transparent.Light"/>
         <activity
-            android:name=".activities.AlarmClockOntimeActivity"
+            android:name="com.example.alarmclock.activities.AlarmClockOntimeActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Wallpaper.NoTitleBar"/>
         <activity
-            android:name=".activities.AlarmClockNapNotificationActivity"
+            android:name="com.example.alarmclock.activities.AlarmClockNapNotificationActivity"
             android:theme="@android:style/Theme.NoDisplay"/>
         <activity
-            android:name=".activities.NapEditActivity"
+            android:name="com.example.alarmclock.activities.NapEditActivity"
             android:launchMode="singleTop"
             android:theme="@style/Theme.MyDialog"/>
         <activity
-            android:name=".activities.TimerOnTimeActivity"
+            android:name="com.example.alarmclock.activities.TimerOnTimeActivity"
             android:launchMode="singleTask"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <receiver
-            android:name=".broadcast.AlarmClockBroadcast"
+            android:name="com.example.alarmclock.broadcast.AlarmClockBroadcast"
             android:process=":daemon">
             <!--广播定义单独进程，在6.0上接受不到，不定义进程退到后台也接受不到。-->
             <!--广播和后台运行的服务保持在一个线程，只要服务不死，这样就都可以接受到广播了-->
@@ -77,7 +77,7 @@
         </receiver>
 
         <service
-            android:name=".service.CountDownService">
+            android:name="com.example.alarmclock.service.CountDownService">
         </service>
     </application>
 
