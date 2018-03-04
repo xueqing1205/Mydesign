@@ -26,13 +26,16 @@ public class AlarmClockBroadcast extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         AlarmClock alarmClock = intent
                 .getParcelableExtra(AlarmClockCommon.ALARM_CLOCK);
+        AlarmClock alarmClock1 = intent
+                .getParcelableExtra("test1");
+        String test=intent.getStringExtra("test");
+
         if (alarmClock != null) {
             // 单次响铃
             if (alarmClock.getWeeks() == null) {
                 AlarmClockOperate.getInstance().updateAlarmClock(false,
                         alarmClock.getId());
-
-                Intent i = new Intent("com.strangeman.alarmclock.AlarmClockOff");
+                Intent i = new Intent("com.example.alarmclock.AlarmClockOff");
                 context.sendBroadcast(i);
             } else {
                 // 重复周期闹钟
