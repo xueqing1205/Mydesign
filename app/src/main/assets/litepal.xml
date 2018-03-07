@@ -5,6 +5,6 @@
     <version value="1"/>
 
     <list>
-        <mapping class="com.example.alarmclock.bean.AlarmClock"/>
+        <mapping class="com.example.alarmclock.bean.model.AlarmClock"/>
     </list>
 </litepal>

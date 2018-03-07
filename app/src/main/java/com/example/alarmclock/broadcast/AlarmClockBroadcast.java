@@ -12,6 +12,7 @@ import com.example.alarmclock.common.AlarmClockCommon;
 import com.example.alarmclock.common.AlarmClockStatus;
 import com.example.alarmclock.db.AlarmClockOperate;
 import com.example.alarmclock.util.MyUtil;
+import com.example.alarmclock.util.Parcelables;
 
 
 /**
@@ -24,12 +25,9 @@ public class AlarmClockBroadcast extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        AlarmClock alarmClock = intent
-                .getParcelableExtra(AlarmClockCommon.ALARM_CLOCK);
-        AlarmClock alarmClock1 = intent
-                .getParcelableExtra("test1");
-        String test=intent.getStringExtra("test");
-
+        byte[] bytes  = intent
+                .getByteArrayExtra(AlarmClockCommon.ALARM_CLOCK);
+        AlarmClock alarmClock= Parcelables.toParcelable(bytes,AlarmClock.CREATOR);
         if (alarmClock != null) {
             // 单次响铃
             if (alarmClock.getWeeks() == null) {

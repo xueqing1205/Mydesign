@@ -89,7 +89,7 @@ public class AlarmClock extends DataSupport implements Parcelable {
     private boolean onOff;
 
     public AlarmClock() {
-        super();
+
     }
 
     /**
