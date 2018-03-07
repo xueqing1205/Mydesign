@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.example.alarmclock.adapter.RingSelectAdapter;
 import com.example.alarmclock.bean.model.RingSelectItem;
 import com.example.alarmclock.common.AlarmClockCommon;
 import com.example.alarmclock.util.AudioPlayer;

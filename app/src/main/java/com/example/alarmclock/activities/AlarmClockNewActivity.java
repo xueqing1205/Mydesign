@@ -10,7 +10,7 @@ import com.strangeman.alarmclock.R;
  * Created by Administrator on 2018/2/3.
  */
 
-public class AlarmClockNewActivity extends SingleFragmentOrdinaryActivity {
+public class AlarmClockNewActivity extends SingleFragmentDialogActivity {
 
     @Override
     protected Fragment createFragment() {

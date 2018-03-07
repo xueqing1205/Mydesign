@@ -268,13 +268,6 @@ public class AlarmClockFragment extends BaseFragment implements View.OnClickList
         }
     }
 
-/*    private boolean isShow() {
-        SharedPreferences share = getActivity().getSharedPreferences(
-                AlarmClockCommon.EXTRA_AC_SHARE, Activity.MODE_PRIVATE);
-        return share.getBoolean(AlarmClockCommon.ALARM_CLOCK_EXPLAIN, true);
-    }
-    */
-
     @Subscribe
     public void onAlarmClockUpdate(AlarmClockUpdateEvent event) {
         updateList();

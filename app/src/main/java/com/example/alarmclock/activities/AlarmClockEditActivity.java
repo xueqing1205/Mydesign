@@ -11,7 +11,7 @@ import com.strangeman.alarmclock.R;
  * Created by Administrator on 2018/2/3.
  */
 
-public class AlarmClockEditActivity extends SingleFragmentOrdinaryActivity{
+public class AlarmClockEditActivity extends SingleFragmentDialogActivity{
 
 
     @Override

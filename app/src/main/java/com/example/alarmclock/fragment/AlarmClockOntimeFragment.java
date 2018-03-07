@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -33,6 +34,7 @@ import com.example.alarmclock.common.AlarmClockCommon;
 import com.example.alarmclock.common.AlarmClockStatus;
 import com.example.alarmclock.util.ActivityCollector;
 import com.example.alarmclock.util.AudioPlayer;
+import com.example.alarmclock.util.MyUtil;
 import com.example.alarmclock.view.MySlidingView;
 import com.strangeman.alarmclock.R;
 
@@ -187,6 +189,9 @@ public class AlarmClockOntimeFragment extends BaseFragment implements
 
         View view = inflater.inflate(R.layout.fm_alarm_clock_ontime, container,
                 false);
+        ViewGroup vg = (ViewGroup) view.findViewById(
+                R.id.llyt_activity_main);
+        MyUtil.setBackground(vg,getActivity());
         mTimeTv = (TextView) view.findViewById(R.id.ontime_time);
         // 显示现在时间
         mTimeTv.setText(new SimpleDateFormat("HH:mm", Locale.getDefault())

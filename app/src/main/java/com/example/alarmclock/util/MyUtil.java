@@ -442,9 +442,9 @@ public class MyUtil {
      */
     @TargetApi(19)
     public static void startAlarmClock(Context context, AlarmClock alarmClock) {
-//        Intent intent = new Intent("com.kaku.weac.broadcast.ALARM_CLOCK_ONTIME");
         Intent intent = new Intent(context, AlarmClockBroadcast.class);
-        intent.putExtra(AlarmClockCommon.ALARM_CLOCK, alarmClock);
+        byte[] bytes=Parcelables.toByteArray(alarmClock);
+        intent.putExtra(AlarmClockCommon.ALARM_CLOCK,bytes);
         // FLAG_UPDATE_CURRENT：如果PendingIntent已经存在，保留它并且只替换它的extra数据。
         // FLAG_CANCEL_CURRENT：如果PendingIntent已经存在，那么当前的PendingIntent会取消掉，然后产生一个新的PendingIntent。
         PendingIntent pi = PendingIntent.getBroadcast(context,
@@ -463,6 +463,7 @@ public class MyUtil {
         } else {
             alarmManager.set(AlarmManager.RTC_WAKEUP, nextTime, pi);
         }
+
 
     }
 

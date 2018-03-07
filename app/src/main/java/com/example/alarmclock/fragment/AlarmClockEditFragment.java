@@ -118,7 +118,8 @@ public class AlarmClockEditFragment extends BaseFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mAlarmClock = getActivity().getIntent().getParcelableExtra(
+        Intent intent=getActivity().getIntent();
+        mAlarmClock = intent.getParcelableExtra(
                 AlarmClockCommon.ALARM_CLOCK);
         // 闹钟默认开启
         mAlarmClock.setOnOff(true);

@@ -12,6 +12,7 @@ import com.example.alarmclock.common.AlarmClockCommon;
 import com.example.alarmclock.common.AlarmClockStatus;
 import com.example.alarmclock.db.AlarmClockOperate;
 import com.example.alarmclock.util.MyUtil;
+import com.example.alarmclock.util.Parcelables;
 
 
 /**
@@ -24,15 +25,15 @@ public class AlarmClockBroadcast extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        AlarmClock alarmClock = intent
-                .getParcelableExtra(AlarmClockCommon.ALARM_CLOCK);
+        byte[] bytes  = intent
+                .getByteArrayExtra(AlarmClockCommon.ALARM_CLOCK);
+        AlarmClock alarmClock= Parcelables.toParcelable(bytes,AlarmClock.CREATOR);
         if (alarmClock != null) {
             // 单次响铃
             if (alarmClock.getWeeks() == null) {
                 AlarmClockOperate.getInstance().updateAlarmClock(false,
                         alarmClock.getId());
-
-                Intent i = new Intent("com.strangeman.alarmclock.AlarmClockOff");
+                Intent i = new Intent("com.example.alarmclock.AlarmClockOff");
                 context.sendBroadcast(i);
             } else {
                 // 重复周期闹钟

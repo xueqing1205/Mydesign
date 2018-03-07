@@ -65,7 +65,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginBottom="2dp"
-                        android:layout_marginTop="2dp"/>
+                        android:layout_marginTop="2dp"
+                        android:timePickerMode="spinner"/>
                 </LinearLayout>
 
                 <View style="@style/divider_line_blank"/>
