@@ -195,28 +195,28 @@ public class AlarmClockFragment extends BaseFragment implements View.OnClickList
         mAcceptAction.setVisibility(View.VISIBLE);
 
         if (mSensorManager == null) {
-            mSensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
-            mSensorEventListener = new SensorEventListener() {
+            mSensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);  //等到SensorManager对象
+            mSensorEventListener = new SensorEventListener() {       //传感器监听
                 @Override
-                public void onSensorChanged(SensorEvent event) {
-                    float xValue = Math.abs(event.values[0]);
-                    float yValue = Math.abs(event.values[1]);
-                    float zValue = Math.abs(event.values[2]);
+                public void onSensorChanged(SensorEvent event) {         //当传感器的数值发生变化时调用
+                    float xValue = Math.abs(event.values[0]);   //x轴方向加速度
+                    float yValue = Math.abs(event.values[1]);   //y轴方向加速度
+                    float zValue = Math.abs(event.values[2]);   //z轴方向加速度
                     // 认为用户摇动了手机，找回被删除的闹钟
                     if (xValue > 15 || yValue > 15 || zValue > 15) {
                         //  ToastUtil.showShortToast(getActivity(),"晃动手机");
                         if (mDeletedAlarmClock != null) {
-                            MyUtil.vibrate(getActivity());
-                            AlarmClockOperate.getInstance().saveAlarmClock(mDeletedAlarmClock);
-                            addList(mDeletedAlarmClock);
-                            mDeletedAlarmClock = null;
+                            MyUtil.vibrate(getActivity());  //震动手机
+                            AlarmClockOperate.getInstance().saveAlarmClock(mDeletedAlarmClock);  //将刚刚删除的闹钟保存到数据库
+                            addList(mDeletedAlarmClock);     //将刚刚删除的闹钟添加到listView
+                            mDeletedAlarmClock = null;    //重置刚刚删除的闹钟为空
                             ToastUtil.showLongToast(getActivity(), getString(R.string.retrieve_alarm_clock_success));
                         }
                     }
                 }
 
                 @Override
-                public void onAccuracyChanged(Sensor sensor, int accuracy) {
+                public void onAccuracyChanged(Sensor sensor, int accuracy) {    //传感器的精度发生变化时调用
 
                 }
             };
